@@ -1,21 +1,24 @@
+// ---------------------------------Sticky Navbar with Proress Bar------------------------------------------------------------------------------
+
 
 let progress = document.getElementById('progressbar');
 let totalHeight = document.body.scrollHeight - window.innerHeight;
+
 window.onscroll = function() {myFunction()};
 
 function myFunction() {
 
-
-    var x = document.getElementById("sticky_navbar");
     let progressHeight = (window.pageYOffset / totalHeight) * 100;
     progress.style.height = progressHeight + "%";
+
+    var x = document.getElementById("sticky_navbar");
 
     if (document.body.scrollTop > 54 || document.documentElement.scrollTop > 54) {
         // document.getElementById("sticky_navbar").className = "sticky-navbar-properties";
 
             x.style.display = "flex";
             x.style.position = "fixed";
-            x.style.background = "black";
+            x.style.background = "linear-gradient(to right,rgb(235,236,238),rgb(239,241,240),rgb(231,235,234),rgb(230,224,225))";
             x.style.alignContent = "center";
             x.style.justifyContent = "space-around";
             x.style.width = "100%";
@@ -31,7 +34,6 @@ function myFunction() {
 // ----------------------------------------------------------------------------------------------------------------------------
 
 
-
 // ---------------------------------Burger sign------------------------------------------------------------------------------
 const navSlide = () => {
     
@@ -41,13 +43,12 @@ const navSlide = () => {
 
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
+        nav.style='background:linear-gradient(to bottom,rgb(227,231,232),rgb(160,173,179))';
 
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = ''
-                        nav.style ='background:black';
-
-
+                nav.style='background:rgba(0,0,0,0)';
             }
             else {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
@@ -62,4 +63,3 @@ const navSlide = () => {
 
 navSlide();
 // ----------------------------------------------------------------------------------------------------------------------------
-

@@ -30,12 +30,18 @@ app.get("/" , (req,res)=>{
 app.get("/forestfire" , (req,res)=>{
     res.render("forestfire")
 })
+app.get("/globalwarming" , (req,res)=>{
+    res.render("globalwarming")
+})
 
 
 app.get("*" , (req,res)=>{
     res.render("404");
 })
 app.get("/forestfire/*" , (req,res)=>{
+    res.render("404");
+})
+app.get("/globalwarming/*" , (req,res)=>{
     res.render("404");
 })
 
