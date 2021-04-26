@@ -49,6 +49,9 @@ app.get("/earthquake" , (req,res)=>{
 app.get("/drought" , (req,res)=>{
     res.render("drought")
 })
+app.get("/contact" , (req,res)=>{
+    res.render("contact")
+})
 
 
 
