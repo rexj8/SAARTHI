@@ -1,6 +1,7 @@
 const express=require("express");
 const path=require("path");
 const hbs=require("hbs")
+const chalk=require("chalk")
 const app=express();
 const port=3000;
 
@@ -68,5 +69,5 @@ app.get("/volcano/*" , (req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log("listening");
+    console.log(chalk.green.inverse(`listening on port ${port}`));
 })
