@@ -140,7 +140,7 @@ nav {
     display: block;
     width: 0;
     height: 2px;
-    background: rgb(19, 170, 145);
+    background: #885405;
     transition: width 0.3s;
   }
   .cool-link:hover::after {
