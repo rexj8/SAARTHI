@@ -5,31 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" conten="ie-edge">
-    <title>Forest Fire</title>
+    <title>SAARTHI</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
-    <link href="forest-fire/Snippets/Nav bar.css" rel="stylesheet">
-    <link href="forest-fire/Snippets/progress bar.css" rel="stylesheet">
-    <link href="forest-fire/forest-fire.css" rel="stylesheet">
+    <link href="css/forestfire.css" rel="stylesheet">
+    <link href="css/forestfireNavbar.css" rel="stylesheet">
+    <link href="css/forestfireprogress.css" rel="stylesheet">
     
     
 </head>
 
 <body>
-    <div id="progressbar"></div>
-    <div id="scrollpath"></div>
+    {{>ProgressBar}}
     
     {{>header}}
 
-    <div id="sticky_navbar">
-        <div class="logo">
-            <a href="#"><h4 class="s">S</h4></a>
-            <a href="#"><h4 class="a">AARTHI</h4></a>
-        </div>
-    </div>
     
     <div id="banner"><img id="banner-img" src="../img/monkey.jpg" alt=""></div>
     <div id="fire-flames"></div>
+
 
     <div class="side-bar">
         
@@ -116,11 +110,10 @@
     </div>
     
     <!-- =================================================================================================================================================     -->
-    <script src="forest-fire/forest-fire.js"></script>
+    <script src="js/forestfire.js"></script>
     <script src='http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
-    <script type="text/javascript" src="forest-fire/app.js"></script>
-    <script type="text/javascript" src="forest-fire/particles.js"></script>
-    <script src="forest-fire.js"></script>
+    <script type="text/javascript" src="js/forestfireapp.js"></script>
+    <script type="text/javascript" src="js/forestfireparticles.js"></script>
     <!-- =================================================================================================================================================     -->
 
 </body>
