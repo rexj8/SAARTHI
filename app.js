@@ -50,6 +50,7 @@ app.get("/drought" , (req,res)=>{
 })
 
 
+
 app.get("*" , (req,res)=>{
     res.render("404");
 })
