@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAARTHI</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/index-navigation.css">
-    <link rel="stylesheet" href="css/index-progressbar.css">
-    <link rel="shortcut icon" href="css/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Home.css">
+    <link rel="stylesheet" href="css/HomeNavbar.css">
+    <link rel="stylesheet" href="css/HomeProgress.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <style>
         .body{
             background: #fff;
@@ -132,32 +132,27 @@
 </head>
 <body>
 
-    <div id="progressbar"></div>
-    <div id="scrollpath"></div>
-
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+{{>ProgressBar}}
 {{>header}}
 
-<script src="js/stories.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" > <a href="../Rachit/forest-fire/forest-fire.html"><img src='images/lava.jpg' alt=""></a>
+      <div class="swiper-slide" > <a href="../Rachit/forest-fire/forest-fire.html"><img src='img/lava.jpg' alt=""></a>
       </div>
-      <div class="swiper-slide"><a href="Hurricane/Hurricane.html"><img src='images/tyfoon.jpg' alt=""></a>
+      <div class="swiper-slide"><a href="Hurricane/Hurricane.html"><img src='img/tyfoon.jpg' alt=""></a>
       </div>
-      <div class="swiper-slide"><a href="https://rexj8.github.io/Saarthi/Dr_Negative(Vinay%20Sharma)/volcano/volcano_Erruption.html"><img src='images/volcano.jpg' alt=""></a>
+      <div class="swiper-slide"><a href="https://rexj8.github.io/Saarthi/Dr_Negative(Vinay%20Sharma)/volcano/volcano_Erruption.html"><img src='img/volcano.jpg' alt=""></a>
       </div>
-      <div class="swiper-slide"><a href="../Rachit/flood/flood.html"> <img src='images/overwater.jpg' alt=""></a>
+      <div class="swiper-slide"><a href="../Rachit/flood/flood.html"> <img src='img/overwater.jpg' alt=""></a>
       </div>
-      <div class="swiper-slide"><a href="Hurricane/Hurricane.html"><img src='images/watercyclone.jpg' alt=""></a>
+      <div class="swiper-slide"><a href="Hurricane/Hurricane.html"><img src='img/watercyclone.jpg' alt=""></a>
       </div>
-      <div class="swiper-slide"><a href="drought/drought.html"> <img src='images/dry.jpg' alt=""></a>
+      <div class="swiper-slide"><a href="drought/drought.html"> <img src='img/dry.jpg' alt=""></a>
       </div>
-      <div class="swiper-slide"><a href="../Rachit/forest-fire/forest-fire.html"><img src='images/forestfire2.jpg' alt=""></a>
+      <div class="swiper-slide"><a href="../Rachit/forest-fire/forest-fire.html"><img src='img/forestfire2.jpg' alt=""></a>
       </div>
-      <div class="swiper-slide"><a href="earthquake/eartquake.html"><img src='images/earthquake.jpg' alt=""></a>
+      <div class="swiper-slide"><a href="earthquake/eartquake.html"><img src='img/earthquake.jpg' alt=""></a>
       </div>
 
     </div>
@@ -278,6 +273,21 @@
     <p class="last-p">Note that this does not mean low-income countries have high death tolls from disasters year-to-year: the data here shows that in most years they also have very low death rates. But when low-frequency, high-impact events do occur they are particularly vulnerable to its effects. Overall development, poverty alleviation, and knowledge-sharing of how to increase resilience to natural disasters will therefore be key to reducing the toll of disasters in the decades to come.</p>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Swiper JS -->
   <script>
     var swiper = new Swiper('.swiper-container', {
@@ -323,5 +333,6 @@
         </div>
     </footer>
 
+<script src="js/Home.js"></script>
 </body>
 </html>
