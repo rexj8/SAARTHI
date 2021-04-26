@@ -42,6 +42,9 @@ app.get("/volcanoeruption" , (req,res)=>{
 app.get("/hurricane" , (req,res)=>{
     res.render("hurricane")
 })
+app.get("/earthquake" , (req,res)=>{
+    res.render("earthquake")
+})
 
 
 app.get("*" , (req,res)=>{
