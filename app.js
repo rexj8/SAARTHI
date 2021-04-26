@@ -36,6 +36,9 @@ app.get("/globalwarming" , (req,res)=>{
 app.get("/flood" , (req,res)=>{
     res.render("flood")
 })
+app.get("/volcanoeruption" , (req,res)=>{
+    res.render("volcano")
+})
 
 
 app.get("*" , (req,res)=>{
@@ -48,6 +51,9 @@ app.get("/globalwarming/*" , (req,res)=>{
     res.render("404");
 })
 app.get("/flood/*" , (req,res)=>{
+    res.render("404");
+})
+app.get("/volcano/*" , (req,res)=>{
     res.render("404");
 })
 
