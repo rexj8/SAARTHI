@@ -52,6 +52,9 @@ app.get("/drought" , (req,res)=>{
 app.get("/contact" , (req,res)=>{
     res.render("contact")
 })
+app.get("/contact/team" , (req,res)=>{
+    res.render("team")
+})
 
 
 
