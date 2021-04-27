@@ -37,7 +37,7 @@ app.get("/globalwarming" , (req,res)=>{
 app.get("/flood" , (req,res)=>{
     res.render("flood")
 })
-app.get("/volcanoeruption" , (req,res)=>{
+app.get("/volcanoerruption" , (req,res)=>{
     res.render("volcano")
 })
 app.get("/hurricane" , (req,res)=>{
