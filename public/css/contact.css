@@ -52,3 +52,13 @@
 .line:hover:before {
   width: 100%;
 }
+
+
+@media screen and (max-width:1000px){
+    .card{
+        /* height: 264px;
+        width: 31vw;
+        margin: 5px;
+        float:right; */
+    }
+}
