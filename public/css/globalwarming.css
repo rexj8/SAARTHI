@@ -319,7 +319,7 @@ ul{
 
   
 footer{
-    background: #eee0b0;
+    background: linear-gradient(to right,rgb(159, 184, 194),rgb(148, 173, 182),rgb(129, 148, 148),rgb(151, 167, 173));
     height: auto;
     width: 100vw;
     color: white;
@@ -368,10 +368,10 @@ footer{
 }
 
 .socials a:hover{
-    color: rgb(121, 62, 7);
+    color: rgb(36,117,138);
 }
 .footer-bottom{
-    background: #eee0b0;
+    background: linear-gradient(to right,rgb(159, 184, 194),rgb(148, 173, 182),rgb(129, 148, 148),rgb(151, 167, 173));;
     width: 100vw;
     padding: 20px 0;
     text-align: center;

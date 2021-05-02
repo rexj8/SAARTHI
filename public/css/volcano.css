@@ -331,7 +331,7 @@ background-color: aqua; */
 
 
 footer{
-    background: #eee0b0;
+    background: black;
     height: auto;
     width: 100vw;
     color: white;
@@ -380,10 +380,10 @@ footer{
 }
 
 .socials a:hover{
-    color: rgb(121, 62, 7);
+    color: rgb(248, 135, 6);
 }
 .footer-bottom{
-    background: #eee0b0;
+    background: black;
     width: 100vw;
     padding: 20px 0;
     text-align: center;

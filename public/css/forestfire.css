@@ -417,10 +417,10 @@ ul{
 
 
   footer{
-    background: #eee0b0;
+    background: linear-gradient(to right, rgb(225, 226, 210), rgb(224, 223, 203), rgb(219, 216, 199), rgb(214, 211, 192));
     height: auto;
     width: 100vw;
-    color: white;
+    color: rgb(121, 62, 7);
     font-family: 'Quicksand', sans-serif;
     padding-top: 40px;
     float:left;
@@ -455,7 +455,7 @@ ul{
     margin: 0 10px;
 }
 .socials a{
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 .socials a i{
     font-size: 1.1rem;
@@ -469,7 +469,7 @@ ul{
     color: rgb(121, 62, 7);
 }
 .footer-bottom{
-    background: #eee0b0;
+    background: linear-gradient(to right, rgb(225, 226, 210), rgb(224, 223, 203), rgb(219, 216, 199), rgb(214, 211, 192));;
     width: 100vw;
     padding: 20px 0;
     text-align: center;
