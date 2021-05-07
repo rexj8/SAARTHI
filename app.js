@@ -135,9 +135,9 @@ app.get("/chat" , (req,res)=>{
 
 
 
-// app.get("*" , (req,res)=>{
-//     res.render("404");
-// })
+app.get("*" , (req,res)=>{
+    res.render("404");
+})
 // app.get("/forestfire/*" , (req,res)=>{
 //     res.render("404");
 // })
