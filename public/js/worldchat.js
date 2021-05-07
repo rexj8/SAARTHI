@@ -16,11 +16,11 @@ function addMessages(message) {
 }
 
 function getMessages() {
-  $.get("http://localhost:3000/messages", (data) => {
+  $.get("http://localhost:3000/world/messages", (data) => {
     data.forEach(addMessages);
   });
 }
 
 function sendMessage(message) {
-  $.post("http://localhost:3000/messages", message);
+  $.post("http://localhost:3000/world/messages", message);
 }

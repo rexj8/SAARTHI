@@ -40,14 +40,14 @@ var Message = mongoose.model('Message',{
 
 var dbUrl = 'mongodb://localhost:27017/root'
 
-app.get('/messages', (req, res) => {
+app.get('/world/messages', (req, res) => {
     Message.find({},(err, messages)=> {
         res.send(messages);
     })
 })
 
 
-app.get('/messages/:user', (req, res) => {
+app.get('/world/messages/:user', (req, res) => {
     var user = req.params.user
     Message.find({name: user},(err, messages)=> {
         res.send(messages);
@@ -55,7 +55,7 @@ app.get('/messages/:user', (req, res) => {
 })
   
 
-app.post('/messages', async (req, res) => {
+app.post('/world/messages', async (req, res) => {
     try{
         var message = new Message(req.body);
         
@@ -129,8 +129,8 @@ app.get("/contact" , (req,res)=>{
 app.get("/contact/team" , (req,res)=>{
     res.render("team")
 })
-app.get("/chat" , (req,res)=>{
-    res.render("chat")
+app.get("/worldchat" , (req,res)=>{
+    res.render("worldchat")
 })
 
 
