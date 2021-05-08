@@ -172,6 +172,12 @@
                 alert("Mention your email");
                 return;
             }
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!email.match(mailformat))
+            {
+                alert("Enter valid email");
+                return;
+            }
 
             console.log(typeof name);
             console.log(typeof amount);
