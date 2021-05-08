@@ -7,6 +7,7 @@ var bodyParser = require('body-parser')
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
+var MongoClient = require('mongodb').MongoClient;
 const port=3000;
 
 const publicPath=path.join(__dirname, "public");
@@ -92,8 +93,20 @@ app.post('/world/messages', async (req, res) => {
     
     
 
+app.post('/data',function(req,res){
+    return res.redirect('/details')
+})
 
-
+MongoClient.connect(dbUrl, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("SAARTHI");
+    var myobj = { name: "name", email: "email" , amount: 100 };
+    dbo.collection("donationDetails").insertOne(myobj, function(err, res) {
+      if (err) throw err;
+    //   console.log("1 document inserted");
+      db.close();
+    });
+});
 
 
 

@@ -158,13 +158,14 @@
 </head>
 <body>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-    <div class="maincontent">
-        <div class="title">Donate</div>
-        <input type="text" placeholder="Enter Your Name..." name="name" id="name">
-        <input type="email" placeholder="Enter Your Email..." name="email" id="email">
-        <input type="number" placeholder="Enter Donation Amount..." name="amount" id="amount">
+    <form action="/data" method="POST" class="maincontent">
+    <div class="title">Donate</div>
+        <input type="text" placeholder="Enter Your Name..." name="name" id="name" required>
+        <input type="email" placeholder="Enter Your Email..." name="email" id="email" required>
+        <input type="number" placeholder="Enter Donation Amount..." name="amount" id="amount" required>
         <div class="button"><button onclick="pay()" type="button" id="paymentclick">Donate</button></div>
-    </div>
+    </form>
+    
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -192,8 +193,6 @@
                 return;
             }
 
-            console.log(typeof name);
-            console.log(typeof amount);
 
             var options = {
                     "key": "rzp_test_sUYKuCMwr0dQcv",
@@ -217,7 +216,7 @@
                         "color": "#15b8f3" // screen color
                     }
                 };
-                console.log(options);
+                console.log("amount - "+options.amount);
                 var propay = new Razorpay(options);
                 propay.open();
                         }
