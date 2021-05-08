@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 25px;
+            color: black;
+            font-family: 'Quicksand', sans-serif;
+            background-color: black;
+
+        }
+        .maincontent{
+            color: #111111;
+            background-color: #111111;
+            min-height: 90vh;
+            border: white 2px solid;
+            border-radius: 25px;
+        }
+        .title{
+            color: white;
+            text-align: center;
+            font-size: 2.6em;
+            justify-content: center;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .name{
+            justify-content: center;
+            text-align: center;
+                   }
+        input{
+            position: relative;
+            font-family: 'Quicksand', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            width: 60%;
+            outline: none;
+            color: white;
+            border-bottom: grey 2px solid;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 25px;
+
+        }
+        .button{
+            margin-top: 20px;
+
+            text-align: center;
+            justify-content: center;
+        }
+        a{
+            border-radius: 10px;
+            padding: 15px 30px;
+            color: #2196f3;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+            overflow: hidden;
+            transition: 0.2s;
+
+        }
+        a:hover{
+            color: #255784;
+            background: #2196f3;
+            box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 8s0px #2196f3;
+            transition-delay: 0.5s;
+        }
+        footer{
+            margin-top: 20px;
+            background: #111111;
+            height: auto;
+            width: 100%  ;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            padding-top: 40px;
+           
+        }
+        .footer-content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .footer-content h1{
+            font-size: 2.6rem;
+            font-weight: 400;
+            text-transform: capitalize;
+            line-height: 3rem;
+           
+
+        }
+        .footer-content p{
+            max-width: 500px;
+            margin: 10px  auto;
+            line-height: 28px;
+
+            font-size: 14px;
+        }
+        .socials{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 3rem 0;
+        }
+        .socials li{
+            margin: 0 0;
+        }
+        .socials a{
+          color: #fff;
+        }
+        .socials a i{
+            font-size: 0.8rem;
+            transition:  color .4s ease;
+        }
+
+        .socials a:hover{
+            color: aqua;
+        }
+        .footer-bottom{
+            background: #000;
+            width: 100vw;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-bottom p{
+            font-size: 14px;
+            word-spacing: 2px;
+            text-transform: capitalize;
+        }
+        .footer-content span{
+            text-transform: uppercase;
+            opacity: .4;
+            color: aqua;
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <div class="maincontent">
+        <div class="title">Donate</div>
+        <input type="text" placeholder="Enter Your Name..." name="name" id="name">
+        <input type="email" placeholder="Enter Your Email..." name="email" id="email">
+        <input type="number" placeholder="Enter Donation Amount..." name="amount" id="amount">
+        <button onclick="pay()" type="button" id="paymentclick">pay amount</button>
+    </div>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    {{>footer}}
+
+    <script>
+        function pay(){
+
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var amount=parseInt(document.getElementById("amount").value);
+
+            if(name==""){
+                alert("Mention your Name");
+                return;
+            }
+            if(email==""){
+                alert("Mention your email");
+                return;
+            }
+
+            console.log(typeof name);
+            console.log(typeof amount);
+
+            var options = {
+                    "key": "rzp_test_sUYKuCMwr0dQcv",
+                    "amount": amount*100, // Example: 2000 paise = INR 20
+                    "name": "SAARTHI",
+                    "description": "Donation for nobel cause",
+                    "image": "img/bank.jpg",// COMPANY LOGO
+                    "handler": function (response) {
+                        console.log(response);
+                        // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+                    },
+                    "prefill": {
+                        "name": name, // pass customer name
+                        "email": 'A@A.COM',// customer email
+                        "contact": '+919123456780' //customer phone no.
+                    },
+                    "notes": {
+                        "address": "address" //customer address 
+                    },
+                    "theme": {
+                        "color": "#15b8f3" // screen color
+                    }
+                };
+                console.log(options);
+                var propay = new Razorpay(options);
+                propay.open();
+                        }
+    </script>
+
+</body>
+</html>

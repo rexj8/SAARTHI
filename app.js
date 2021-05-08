@@ -132,6 +132,9 @@ app.get("/contact/team" , (req,res)=>{
 app.get("/worldchat" , (req,res)=>{
     res.render("worldchat")
 })
+app.get("/donate" , (req,res)=>{
+    res.render("donate")
+})
 
 
 
