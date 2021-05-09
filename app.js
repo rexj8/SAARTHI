@@ -1,28 +1,27 @@
-const express=require("express");
-const path=require("path");
+const express=require("express")
+const path=require("path")
 const hbs=require("hbs")
-const chalk=require("chalk")
 const app=express();
 var bodyParser = require('body-parser')
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var mongoose = require('mongoose');
+var http = require('http').Server(app)
+var io = require('socket.io')(http)
+var mongoose = require('mongoose')
 var MongoClient = require('mongodb').MongoClient;
 const Register=require('./models/registers')
 // require("./db/conn")
 const port=process.env.PORT || 3000
 
 
-const publicPath=path.join(__dirname, "public");
-const viewsPath=path.join(__dirname, "views");
-const partialsPath=path.join(__dirname, "views/partials");
+const publicPath=path.join(__dirname, "public")
+const viewsPath=path.join(__dirname, "views")
+const partialsPath=path.join(__dirname, "views/partials")
 
 // to set view engine
 app.set("view engine" , "hbs")
 app.set("views" , viewsPath)
 hbs.registerPartials(partialsPath)
 
-app.use(express.static('public'));
+app.use(express.static('public'))
 // app.use(express.static('views'));
 // app.use(express.static(__dirname));
 app.use(bodyParser.json());
@@ -88,7 +87,7 @@ app.post('/world/messages', async (req, res) => {
       console.log('a user is connected')
     })
     
-mongoose.connect(dbUrl ,{useMongoClient : true,useNewUrlParser: true,useUnifiedTopology: true} ,(err) => {
+mongoose.connect(dbUrl ,{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true} ,(err) => {
     console.log('mongodb connected',err);
 })
     
@@ -110,15 +109,48 @@ MongoClient.connect(dbUrl, function(err, db) {
     });
 });
 
+var rendername="SIGN IN"
+app.post("/login",async(req,res)=>{
+    try {
+
+        const email=req.body.email;
+        const password=req.body.password;
+
+        const usermail = await Register.findOne({email:email})
+        // {email:email} can only be written as {email}
+        
+        // res.send(usermail) // use to send data at json
+        // console.log(usermail)
+        
+        if(usermail.password===password){
+            res.status(201).render("home",{
+                // UsernName:usermail.name.toUpperCase()
+                rendername:usermail.name.toUpperCase()
+            });
+            // res.status(201).render("index")
+        }
+        else{
+            res.send("Incorrect Password")
+        }
+
+    } catch (error) {
+        res.status(400).send("Invalid Email")
+    }
+})
+
 
 
 
 
 app.get("/" , (req,res)=>{
-    res.render("home")
+    res.render("home",{
+        UserName:rendername
+    })
 })
 app.get("/forestfire" , (req,res)=>{
-    res.render("forestfire")
+    res.render("forestfire",{
+        UserName:rendername
+    })
 })
 app.get("/globalwarming" , (req,res)=>{
     res.render("globalwarming")
@@ -191,35 +223,8 @@ app.post("/register" , async (req,res)=>{
     }
 })
 
-app.post("/login",async(req,res)=>{
-    try {
-
-        const email=req.body.email;
-        const password=req.body.password;
-
-        const usermail = await Register.findOne({email:email})
-        // {email:email} can only be written as {email}
-        
-        // res.send(usermail) // use to send data at json
-        // console.log(usermail)
-        
-        if(usermail.password===password){
-            res.status(201).render("home",{
-                name:usermail.name
-            });
-            // res.status(201).render("index")
-        }
-        else{
-            res.send("Incorrect Password")
-        }
 
 
-
-
-    } catch (error) {
-        res.status(400).send("invalid Email")
-    }
-})
 
 
 
