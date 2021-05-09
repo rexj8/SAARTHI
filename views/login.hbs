@@ -120,6 +120,7 @@
             border: 1px solid #184d47;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             font-size: 0.9rem;
+            cursor:pointer
         }
 
         .login .login-form .form-wrapper .actions .action:hover {
@@ -173,11 +174,11 @@
                     <div class="form-wrapper">
                         <div class="input-wrapper">
                             <label class="label" for="email">Email Address</label>
-                            <input class="input" type="text" id="email" name="username" required autocomplete="off" />
+                            <input class="input" type="email" name="email" id="email" required />
                         </div><br>
                         <div class="input-wrapper">
                             <label class="label" for="password">Password</label>
-                            <input class="input" type="password" id="password" name="password" required />
+                            <input class="input" type="password" name="password" id="password" required />
                         </div>
                         <div class="action-help">
                             <a class="help-link" href="#">Forgot your password?</a>
