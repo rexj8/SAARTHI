@@ -231,22 +231,6 @@ app.post("/register" , async (req,res)=>{
 app.get("*" , (req,res)=>{
     res.render("404");
 })
-// app.get("/forestfire/*" , (req,res)=>{
-//     res.render("404");
-// })
-// app.get("/globalwarming/*" , (req,res)=>{
-//     res.render("404");
-// })
-// app.get("/flood/*" , (req,res)=>{
-//     res.render("404");
-// })
-// app.get("/volcano/*" , (req,res)=>{
-//     res.render("404");
-// })
-
-// app.listen(port,()=>{
-//     console.log(chalk.green.underline.inverse(`listening on port ${port}`));
-// })
 
 var server = http.listen(3000, () => {
     console.log('server is running on port', server.address().port);
