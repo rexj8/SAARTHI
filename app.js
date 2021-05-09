@@ -9,7 +9,7 @@ var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
 const Register=require('./models/registers')
-require("./db/conn")
+// require("./db/conn")
 const port=process.env.PORT || 3000
 
 
@@ -21,7 +21,6 @@ const partialsPath=path.join(__dirname, "views/partials");
 app.set("view engine" , "hbs")
 app.set("views" , viewsPath)
 hbs.registerPartials(partialsPath)
-// {{>header}} use html for partials in index.hbs
 
 app.use(express.static('public'));
 // app.use(express.static('views'));
@@ -89,9 +88,9 @@ app.post('/world/messages', async (req, res) => {
       console.log('a user is connected')
     })
     
-    mongoose.connect(dbUrl ,{useMongoClient : true,useNewUrlParser: true,useUnifiedTopology: true} ,(err) => {
-        console.log('mongodb connected',err);
-    })
+mongoose.connect(dbUrl ,{useMongoClient : true,useNewUrlParser: true,useUnifiedTopology: true} ,(err) => {
+    console.log('mongodb connected',err);
+})
     
     
     
