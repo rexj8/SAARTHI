@@ -8,7 +8,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
-const port=3000;
+const Register=require('./models/registers')
+require("./db/conn")
+const port=process.env.PORT || 3000
+
 
 const publicPath=path.join(__dirname, "public");
 const viewsPath=path.join(__dirname, "views");
