@@ -41,7 +41,7 @@ var Message = mongoose.model('Message',{
     message : String
 })
 
-var dbUrl = 'mongodb://localhost:27017/SAARTHI'
+var dbUrl = 'mongodb+srv://Rexj8:Mathura@123@nodejs-login.pv5db.mongodb.net/SAARTHI?retryWrites=true&w=majority'
 
 app.get('/world/messages', (req, res) => {
     Message.find({},(err, messages)=> {
@@ -155,6 +155,70 @@ app.get("/login" , (req,res)=>{
 })
 app.get("/register" , (req,res)=>{
     res.render("register")
+})
+
+app.post("/register" , async (req,res)=>{
+    try{
+        // console.log(req.body.name)
+        // res.send(req.body.name)// use to send data at /register after submit
+
+        const password = req.body.password
+        const cpassword = req.body.confirmpassword
+
+        
+        
+        if(password===cpassword){
+            const registerUser = new Register({
+                name:req.body.name,
+                email:req.body.email,
+                password:password,
+                confirmpassword:cpassword
+            })
+            
+            const registered = await registerUser.save();
+            res.status(201).render("login")
+            
+            // res.render("index",{
+            //     name:req.body.name
+            // });
+        }
+        else{
+            res.send("Password is not Matching")
+        }
+        
+    }catch(e){
+        res.status(400).send(e)
+    }
+})
+
+app.post("/login",async(req,res)=>{
+    try {
+
+        const email=req.body.email;
+        const password=req.body.password;
+
+        const usermail = await Register.findOne({email:email})
+        // {email:email} can only be written as {email}
+        
+        // res.send(usermail) // use to send data at json
+        // console.log(usermail)
+        
+        if(usermail.password===password){
+            res.status(201).render("home",{
+                name:usermail.name
+            });
+            // res.status(201).render("index")
+        }
+        else{
+            res.send("Incorrect Password")
+        }
+
+
+
+
+    } catch (error) {
+        res.status(400).send("invalid Email")
+    }
 })
 
 
