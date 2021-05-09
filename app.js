@@ -224,10 +224,6 @@ app.post("/register" , async (req,res)=>{
 })
 
 
-
-
-
-
 app.get("*" , (req,res)=>{
     res.render("404");
 })
