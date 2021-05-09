@@ -40,7 +40,7 @@ var Message = mongoose.model('Message',{
     message : String
 })
 
-var dbUrl = 'mongodb://localhost:27017/SAARTHI'
+var dbUrl = 'mongodb+srv://Rexj8:D8g5eGZwLaiTdTKO@nodejs-login.pv5db.mongodb.net/SAARTHI?retryWrites=true&w=majority'
 
 app.get('/world/messages', (req, res) => {
     Message.find({},(err, messages)=> {
