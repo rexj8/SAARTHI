@@ -27,6 +27,7 @@ app.use(express.static('public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
 
+
 // template engine route
 // app.get("",(req,res)=>{
     //     res.render("index",{
